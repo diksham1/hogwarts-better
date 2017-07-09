@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        {% block title %}Hogwarts School of Witchcraft and Wizardry{% endblock %}
+    </title>
+    <meta charset="utf-8">
+    
+    <!-- Latest compiled and minified CSS -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+</head>
+
+<body>
+    <div class="row banner">
+        <div class="col-md-4 col-xs-4 col-sm-4"> 
+            <img  width="50%" height="100%" class="img-responsive" src="https://s-media-cache-ak0.pinimg.com/736x/f6/07/af/f607af5bc60d1b2837add83c70a2aa45--harry-potter-birthday-invitations-party-invitations.jpg">
+        </div>
+        <div class="col-md-8 col-xs-8 col-sm-8" style="vertical-align:center">
+            <h3>Hogwarts School of Witchcraft and Wizardry</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-xs-12 col-sm-12">
+            <nav class="navbar navbar-inverse" style="border-radius: 0">
+                <div class ="container-fluid">
+                    
+                    <div class="navbar-header">
+                        <button type="button" data-toggle="collapse" class="navbar-toggle" data-target="#menu">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    
+                    <div class="collapse navbar-collapse" id="menu">
+                        <ul class="navbar-nav nav">
+                            <li><a href="#"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Faculty</a></li>
+                            <li><a href="#">Students</a></li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Houses <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Gryffindor</a></li>
+                                    <li><a href="#">Hufflepuff</a></li>
+                                    <li><a href="#">Ravenclaw</a></li>
+                                    <li><a href="#">Slytherin</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Results</a></li>
+                        </ul>
+                        <ul class="navbar-nav nav navbar-right">
+                            <li><a href="#"><span class="glyphicon glyphicon-plus"></span> Register</a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> {% block signin %}Log In{% endblock %}</a></li>
+                       </ul>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+    </div>
+</body>
+
+</html>
