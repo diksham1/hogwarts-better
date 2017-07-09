@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 
@@ -5,8 +7,10 @@
     <title>
         {% block title %}Hogwarts School of Witchcraft and Wizardry{% endblock %}
     </title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
     <meta charset="utf-8">
-    
+   
+ <link href="https://fonts.googleapis.com/css?family=Frijole|Great+Vibes|Kelly+Slab|Rye|Trocchi" rel="stylesheet">  
     <!-- Latest compiled and minified CSS -->
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -19,12 +23,15 @@
 </head>
 
 <body>
-    <div class="row banner">
-        <div class="col-md-4 col-xs-4 col-sm-4"> 
-            <img  width="50%" height="100%" class="img-responsive" src="https://s-media-cache-ak0.pinimg.com/736x/f6/07/af/f607af5bc60d1b2837add83c70a2aa45--harry-potter-birthday-invitations-party-invitations.jpg">
-        </div>
-        <div class="col-md-8 col-xs-8 col-sm-8" style="vertical-align:center">
-            <h3>Hogwarts School of Witchcraft and Wizardry</h3>
+    <div class="row" style="background-color: black;">
+        <header class="page-header">
+            <div id="wrapper" class="col-md-2 col-xs-12 col-sm-12">
+                <img id="logo" class="img-responsive" src="https://s-media-cache-ak0.pinimg.com/736x/1c/b2/d4/1cb2d484c1479f90eea425bf963936a6--harry-potter-craft-harry-potter-movies.jpg" height="150px" width="150px">
+            </div>
+            <div class="col-md-10 col-sm-12 col-xs-12">
+                <h1 id="top">Hogwarts School of Witchcraft and Wizardry</h1>
+            </div>
+        </header>
         </div>
     </div>
     <div class="row">
