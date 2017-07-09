@@ -1,5 +1,7 @@
-#logo{
+img{
     margin: 0 auto;
+	height: 20vh;
+	width: 9vw;
 }
 
 #wrapper{
@@ -14,7 +16,8 @@
 #top{
 	text-align: center;
     color: pink;
-    font-size: 5em;
+    font-size: 5vw;
     font-family: 'Great Vibes', cursive;
-	margin-top: 5%; 
+	margin-top: 3%;
+	margin-left: -5%; 
 }
