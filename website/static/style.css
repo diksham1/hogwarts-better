@@ -1,7 +1,7 @@
 img{
     margin: 0 auto;
-	height: 20vh;
-	width: 9vw;
+    height: 20vh;
+    width: 9vw;
 }
 
 #wrapper{
@@ -10,14 +10,72 @@ img{
 
 .page-header{
     display: inline;
-	background-color: black;
+    background-color: black;
 }
 
 #top{
-	text-align: center;
+    text-align: center;
     color: pink;
     font-size: 5vw;
     font-family: 'Great Vibes', cursive;
-	margin-top: 3%;
-	margin-left: -5%; 
+    margin-top: 3%;
+    margin-left: -5%; 
+}
+
+.left, .right{
+    border: 3px solid skyblue;
+    border-radius: 5px;
+    background: lightcyan;
+    padding: 3%;
+}
+
+.left-div, .middle-div{
+    padding: 1% 4% 4% 4% !important;
+}
+
+.right-div{
+    padding-right: 4% !important;
+    padding-left: 4% !important;
+    padding-top: 1%; !important;
+}
+
+@media screen (max-width: 768px){
+    .left, .middle, .right{
+        margin-left: 5%;
+    }
+}
+
+.middle-div{
+    background: white;
+    box-shadow: 4px 4px #ddd;
+    border: 2px solid #edd;
+}
+
+.middle{
+    padding: 3%;
+    text-align: justify;
+    font-family: 'trocchi', cursive;
+    font-size: 1.3vw;
+}
+
+.side li a{
+    font-size: 1.2vw;
+	text-align: justify;
+}
+
+#heading{
+    font-size: 2.5vw;
+    text-align: center;
+    font-family: 'rye', cursive;
+}
+
+.link-heading{
+    font-size: 2vw;
+    text-align: center;
+    font-style: bold;
+    font-family: 'kelly slab', cursive;
+}
+
+body{
+    background-image: url('http://www.designbolts.com/wp-content/uploads/2012/12/Silver-scale-White-Seamless-Texture-For-Website-Background.jpg');
 }

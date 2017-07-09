@@ -63,6 +63,7 @@
                                     <li><a href="#">Slytherin</a></li>
                                 </ul>
                             </li>
+                            <li><a href="#">Photo Gallery</a></li>
                             <li><a href="#">Results</a></li>
                         </ul>
                         <ul class="navbar-nav nav navbar-right">
@@ -74,6 +75,36 @@
                 </div>
             </nav>
         </div>
+    </div>
+    <div class="row">
+        <div class="left-div col-md-3 col-xs-12 col-sm-12">
+            <div class="left">
+                <h3 class="link-heading">Other Links</h3>
+                <ul class="side">
+                    <li><a href="#">Infrastructure</a></li>
+                    <li><a href="#">Alumini Register Here</a></li>
+                    <li><a href="#">Acheivements</a></li>
+                    <li><a href="#">Rules and Regulations</a></li>
+                    <li><a href="#">Infrastructure</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="middle-div col-md-6 col-xs-12 col-sm-12">
+            <div class="middle">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+        <div class="right-div col-md-3 col-xs-12 col-sm-12">
+            <div class="right">    
+                <h3 class="link-heading">Current News</h3><hr>
+                <ul class="side">
+                    {% for news in news_list %}
+                        <li><a href="#">{{ news.date }}: {{ news.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>      
     </div>
 </body>
 
