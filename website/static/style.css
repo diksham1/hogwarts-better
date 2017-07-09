@@ -1,0 +1,20 @@
+#logo{
+    margin: 0 auto;
+}
+
+#wrapper{
+    padding: 5px;
+}
+
+.page-header{
+    display: inline;
+	background-color: black;
+}
+
+#top{
+	text-align: center;
+    color: pink;
+    font-size: 5em;
+    font-family: 'Great Vibes', cursive;
+	margin-top: 5%; 
+}
