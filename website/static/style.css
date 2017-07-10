@@ -4,6 +4,10 @@ img{
     width: 9vw;
 }
 
+ul {
+    list-style-type: square;
+}
+
 #wrapper{
     padding: 5px;
 }
@@ -78,4 +82,9 @@ img{
 
 body{
     background-image: url('http://www.designbolts.com/wp-content/uploads/2012/12/Silver-scale-White-Seamless-Texture-For-Website-Background.jpg');
+}
+
+#castle{
+	height: 15vw;
+	width: 17vw;	
 }

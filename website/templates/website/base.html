@@ -24,6 +24,7 @@
 </head>
 
 <body>
+ <div class="container-fluid">
     <div class="row" style="background-color: black;">
         <header class="page-header">
             <div id="wrapper" class="col-md-2 col-xs-12 col-sm-12">
@@ -50,7 +51,7 @@
                     
                     <div class="collapse navbar-collapse" id="menu">
                         <ul class="navbar-nav nav">
-                            <li><a href="#"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                            <li><a href="{% url 'website:index' %}"><span class="glyphicon glyphicon-home"></span> Home</a></li>
                             <li><a href="#">About</a></li>
                             <li><a href="#">Faculty</a></li>
                             <li><a href="#">Students</a></li>
@@ -68,7 +69,16 @@
                         </ul>
                         <ul class="navbar-nav nav navbar-right">
                             <li><a href="#"><span class="glyphicon glyphicon-plus"></span> Register</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> {% block signin %}Log In{% endblock %}</a></li>
+                            <li>
+                                <a href="#">
+                                    <span class="glyphicon glyphicon-user"></span> 
+                                    {% if user.is_authenticated %}
+                                        Log Out
+                                    {% else %}
+                                        Log In
+                                    {% endif %}
+                                </a>
+                            </li>
                        </ul>
                     </div>
 
@@ -85,7 +95,6 @@
                     <li><a href="#">Alumini Register Here</a></li>
                     <li><a href="#">Acheivements</a></li>
                     <li><a href="#">Rules and Regulations</a></li>
-                    <li><a href="#">Infrastructure</a></li>
                 </ul>
             </div>
         </div>
@@ -106,6 +115,7 @@
             </div>
         </div>      
     </div>
+ </div>
 </body>
 
 </html>
