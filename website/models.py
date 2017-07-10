@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 from django.db import models
 import datetime
+from django.urls import reverse
 
 YEAR_CHOICES = []
 
@@ -40,6 +41,10 @@ class Faculty(models.Model):
     def __str__(self):
         return self.name +', ' + str(self.subject.name) + ' faculty'
 
+    def get_absolute_url(self):
+        return reverse('website:faculty-detail-view', args=[str(self.id)])
+
+
 
 class House(models.Model):
     name = models.CharField(max_length=100)
@@ -69,8 +74,8 @@ class Photo(models.Model):
         return self.title + ', ' + str(self.date)
 
 class Result(models.Model):
-    sub_name = models.ForeignKey(Subject, on_delete=models.CASCADE, help_text='Subject')
-    stu_name = models.ForeignKey(Student, on_delete=models.CASCADE, help_text='Student')
+    subject_name = models.ForeignKey(Subject, on_delete=models.CASCADE, help_text='Subject')
+    student_name = models.ForeignKey(Student, on_delete=models.CASCADE, help_text='Student')
     CHOICES = (
         ('O', 'Outstanding'),
         ('E', 'Exceeds Expectations'),       
@@ -115,7 +120,7 @@ class Infrastructure(models.Model):
 
 class Acheivement(models.Model):
     title = models.CharField(max_length=500)
-    stu_name = models.ForeignKey(Student, on_delete=models.CASCADE)
+    student_name = models.ForeignKey(Student, on_delete=models.CASCADE)
     year = models.IntegerField(choices=YEAR_CHOICES)
     description = models.TextField()
 

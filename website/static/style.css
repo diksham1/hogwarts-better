@@ -33,26 +33,26 @@ ul {
     padding: 3%;
 }
 
-.left-div, .middle-div{
+.middle-div{
     padding: 1% 4% 4% 4% !important;
+}
+
+.left-div{
+    padding: 1% 4% 2% 4% !important;
 }
 
 .right-div{
     padding-right: 4% !important;
     padding-left: 4% !important;
-    padding-top: 1%; !important;
-}
-
-@media screen (max-width: 768px){
-    .left, .middle, .right{
-        margin-left: 5%;
-    }
+    padding-top: 2%; !important;
 }
 
 .middle-div{
     background: white;
     box-shadow: 4px 4px #ddd;
     border: 2px solid #edd;
+	margin-top: 1%;
+	margin-bottom: 3%;
 }
 
 .middle{
@@ -71,13 +71,14 @@ ul {
     font-size: 2.5vw;
     text-align: center;
     font-family: 'rye', cursive;
+	margin-bottom: 5%;
 }
 
 .link-heading{
     font-size: 2vw;
     text-align: center;
     font-style: bold;
-    font-family: 'kelly slab', cursive;
+    font-family: 'rye', cursive;
 }
 
 body{
@@ -87,4 +88,9 @@ body{
 #castle{
 	height: 15vw;
 	width: 17vw;	
+}
+
+#me{
+	height: 30vw;
+	width: 30vw;
 }

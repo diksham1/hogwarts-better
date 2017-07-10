@@ -52,8 +52,8 @@
                     <div class="collapse navbar-collapse" id="menu">
                         <ul class="navbar-nav nav">
                             <li><a href="{% url 'website:index' %}"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Faculty</a></li>
+                            <li><a href="{% url 'website:about' %}">About</a></li>
+                            <li><a href="{% url 'website:faculty-list-view' %}">Faculty</a></li>
                             <li><a href="#">Students</a></li>
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Houses <span class="caret"></span></a>

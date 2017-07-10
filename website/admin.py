@@ -23,8 +23,8 @@ admin.site.register(Subject)
 
 @admin.register(Result)
 class ResultAdmin(admin.ModelAdmin):
-    list_display = ['stu_name', 'sub_name', 'grade']
-    list_filter = ['grade', 'sub_name']
+    list_display = ['student_name', 'subject_name', 'grade']
+    list_filter = ['grade', 'subject_name']
 
 @admin.register(Photo)
 class PhotoAdmin(admin.ModelAdmin):
@@ -46,6 +46,6 @@ class AluminiAdmin(admin.ModelAdmin):
 
 @admin.register(Acheivement)
 class AcheivementAdmin(admin.ModelAdmin):
-    list_display = ['title', 'stu_name', 'year']
+    list_display = ['title', 'student_name', 'year']
 
 admin.site.register(News)
