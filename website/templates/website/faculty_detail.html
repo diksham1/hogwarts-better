@@ -1,0 +1,22 @@
+{% extends 'website/base.html' %}
+
+{% block title %}{{ faculty.name }}{% endblock %}
+
+
+{% block content %}
+    <div id="heading">
+        <h3>{{ faculty.name }}</h3>
+    </div>
+    <div class="col-xs-4 col-sm-4 col-md-12 col-lg-12" style="margin-bottom: 3%">
+        <img src="https://s-media-cache-ak0.pinimg.com/originals/4a/e4/5e/4ae45e8b858923513b483d24fc05f7ea.jpg" id="me" class="img-responsive">
+    </div>
+    <div style="margin-top: 3%;" class="col-xs-8 col-lg-12 col-sm-8 col-md-12">
+        <p><strong>Name: </strong>{{ faculty.name }}</p>
+        <p><strong>Date of Birth: </strong>{{ faculty.dob }}</p>
+        <p><strong>Subject: </strong>{{ faculty.subject }}</p>
+        <p><strong>Qualification: </strong>{{ faculty.qualification }}</p>
+        <p><strong>Experience: </strong>{{ faculty.experience }}</p>
+        <p><strong>Research Areas: </strong>{{ faculty.research_areas }}</p>
+        <p><strong>About {{ faculty.name }}: </strong>{{ faculty.description }}</p>
+    </div>
+{% endblock %}

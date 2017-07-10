@@ -1,0 +1,25 @@
+{% extends 'website/base.html' %}
+
+{% block title %}
+Our Faculty
+{% endblock %}
+
+{% block content %}
+    <h3 id="heading">List of Faculty Members</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Subject</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for faculty in faculty_list %}
+                <tr>
+                    <td><a href="{{ faculty.get_absolute_url }}">{{ faculty.name }}</a></td>
+                    <td>{{ faculty.subject }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
