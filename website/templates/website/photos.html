@@ -1,0 +1,21 @@
+{% extends 'website/base.html' %}
+
+{% block title %}Photo Gallery{% endblock %}
+
+{% block content %}
+    <h3 id="heading">Photo Gallery</h3>
+    <div class="row">
+        {% for photo in photo_list %}
+            <div class="col-md-6 col-xs-12 col-sm-6 col-lg-4" style="padding: 2%;">
+                <div class="thumbnail">
+                    <a href="#">
+                        <img class="img-responsive" style="height:100%; width:100%" src="{{ photo.image }}">
+                    </a>
+                    <h5 class="caption" style="word-wrap:break-word">
+                    {{ photo }}
+                    </h5>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

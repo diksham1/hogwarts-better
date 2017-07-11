@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 from django.views.generic import ListView, DetailView
 from django.shortcuts import render
-from .models import Faculty, Student, House
+from .models import Faculty, Student, House, Photo
 
 
 def index(request):
@@ -30,3 +30,7 @@ class StudentDetailView(DetailView):
 class HouseDetailView(DetailView):
     model = House
     fields = '__all__'
+
+class PhotoListView(ListView):
+    model = Photo
+    template_name = 'website/photos.html'
