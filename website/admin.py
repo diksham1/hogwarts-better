@@ -7,8 +7,8 @@ from django.contrib import admin
 
 @admin.register(Student)
 class StudentAdmin(admin.ModelAdmin):
-    list_display = ['name', 'dob', 'semester', 'house']
-    list_filter = ['house', 'semester']
+    list_display = ['name', 'dob', 'year', 'house']
+    list_filter = ['house', 'year']
 
 @admin.register(Faculty)
 class FacultyAdmin(admin.ModelAdmin):
@@ -17,7 +17,7 @@ class FacultyAdmin(admin.ModelAdmin):
 
 @admin.register(House)
 class HouseAdmin(admin.ModelAdmin):
-    list_display = ['name', 'head', 'colors']
+    list_display = ['name', 'head', 'color1', 'color2']
 
 admin.site.register(Subject)
 

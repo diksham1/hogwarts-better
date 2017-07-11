@@ -8,19 +8,26 @@ YEAR_CHOICES = []
 for r in range(1980, (datetime.datetime.now().year+1)):
     YEAR_CHOICES.append((r,r))
 
+CLASS_CHOICES = []
+
+for r in range(1, 8):
+    CLASS_CHOICES.append((r,r))
 
 class Student(models.Model):
     name = models.CharField(max_length=100)
     dob = models.DateField('Date of Birth')
-    semester = models.IntegerField()
+    year = models.IntegerField(choices=CLASS_CHOICES, default=1)
     interests = models.CharField(max_length=300)
     description = models.TextField(help_text="A brief bio of the student")
     picture = models.FileField(blank = True, null=True)
     house = models.ForeignKey('House', on_delete=models.CASCADE)
     subjects = models.ManyToManyField('Subject')
+    
+    def get_absolute_url(self):
+        return reverse('website:student-detail-view', args=[str(self.id)])
 
     def __str__(self):
-        return self.name + ", Semester " + str(self.semester)
+        return self.name + ", Year " + str(self.year)
 
 
 class Faculty(models.Model):
@@ -28,9 +35,9 @@ class Faculty(models.Model):
     dob = models.DateField('Date of Birth')
     subject = models.ForeignKey('Subject', on_delete=models.CASCADE)
     CHOICES = (
-        ('owl', 'Owl'),
-        ('newt', 'Newt'),
-        ('above newt', 'Above Newt'),
+        ('O.W.L', 'Owl'),
+        ('N.E.W.T', 'Newt'),
+        ('Above N.E.W.T', 'Above Newt'),
     )
     qualification = models.CharField(max_length=30, choices = CHOICES)
     experience = models.IntegerField(default=0)
@@ -52,8 +59,11 @@ class House(models.Model):
     notable_alumini = models.CharField(max_length=500)
     description = models.TextField()
     photo = models.FileField(blank=True, null=True)
-    colors = models.CharField(max_length=200)
-    
+    color1 = models.CharField('House Color 1',max_length=200, blank=True, null=True)
+    color2 = models.CharField('House Color 2',max_length=200, blank=True, null=True)
+    color3 = models.CharField('Text Color',max_length=200, blank=True, null=True)
+
+  
     def __str__(self):
         return self.name
 
