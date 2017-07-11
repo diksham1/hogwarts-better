@@ -1,0 +1,26 @@
+{% extends 'website/base.html' %}
+
+{% block title %}{{ house.name }}{% endblock %}
+
+
+{% block content %}
+    <div id="heading">
+        <h3 style="color: {{ house.color1 }}; text-shadow: 2px 2px {{ house.color2 }}">{{ house.name }}</h3>
+    </div>
+    <div class="col-xs-4 col-sm-4 col-md-12 col-lg-12" style="margin-bottom: 3%">
+        <img src="https://s-media-cache-ak0.pinimg.com/originals/4a/e4/5e/4ae45e8b858923513b483d24fc05f7ea.jpg" id="me" class="img-responsive">
+    </div>
+    <div class="house" style="background-color: {{ house.color2 }};
+    color: {{house.color3}}" class="col-xs-8 col-lg-12 col-sm-8 col-md-12">
+        <p><strong>Head: </strong>{{ house.head }}</p>
+        <p><strong>Colors: </strong>{{ house.color2 }} and
+            {% if house.id == 1 %}
+                Bronze
+            {% else %}
+                 {{ house.color1 }}
+            {% endif %}
+        </p>
+        <p><strong>Notable Alumini: </strong>{{ house.notable_alumini }}</p>
+        <p><strong>Description: </strong>{{ house.description }}</p>
+    </div>
+{% endblock %}

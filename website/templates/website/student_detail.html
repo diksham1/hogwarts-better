@@ -1,0 +1,22 @@
+{% extends 'website/base.html' %}
+
+{% block title %}{{ student.name }}{% endblock %}
+
+
+{% block content %}
+    <div id="heading">
+        <h3>{{ student.name }}</h3>
+    </div>
+    <div class="col-xs-4 col-sm-4 col-md-12 col-lg-12" style="margin-bottom: 3%">
+        <img src="https://s-media-cache-ak0.pinimg.com/originals/4a/e4/5e/4ae45e8b858923513b483d24fc05f7ea.jpg" id="me" class="img-responsive">
+    </div>
+    <div style="margin-top: 3%;" class="col-xs-8 col-lg-12 col-sm-8 col-md-12">
+        <p><strong>Name: </strong>{{ student.name }}</p>
+        <p><strong>Date of Birth: </strong>{{ student.dob }}</p>
+        <p><strong>Year: </strong>{{ student.year }}</p>
+        <p><strong>Interests: </strong>{{ student.interests }}</p>
+        <p><strong>House: </strong>{{ student.house.name }}</p>
+        <p><strong>Subjects Opted: </strong>{{ student.subject_set.all }}</p>
+        <p><strong>About {{ student.name }}: </strong>{{ student.description }}</p>
+    </div>
+{% endblock %}
