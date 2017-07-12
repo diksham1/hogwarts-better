@@ -1,0 +1,19 @@
+{% extends 'website/base.html' %}
+
+{% block title %}Check Results{% endblock %}
+
+{% block content %}
+    <h1 id="heading">Check Result</h1>
+    <form class="form-horizontal" method="post" action="">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-8 col-xs-12 col-sm-8" style="margin-bottom:3%; border: 2px solid #ddd; padding: 5%">
+                {{ form.as_p }}
+            </div>
+            <br>
+            <div class="col-md-4 col-xs-4 col-sm-4">
+                <input type="submit" value="Search" class="btn-reponsive">
+            </div>
+        </div>
+    </form>
+{% endblock %}

@@ -102,7 +102,13 @@ body{
 	padding: 2vw;
 }
 
-
+.btn-reponsive{
+	display: block;
+	background-color: lightblue;
+	color: black;
+	width: 10.5vw;
+	height: 4vw;
+}
 
 
 

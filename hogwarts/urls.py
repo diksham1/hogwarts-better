@@ -15,11 +15,20 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.views.static import serve
+import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^school/', include('website.urls')),
-]
+] 
+
+urlpatterns += [
+        url(r'^media/(?P<path>.*)$', serve, {
+            'document_root': settings.MEDIA_ROOT,
+        }),
+    ]
+
 
 from django.views.generic import RedirectView
 urlpatterns += [

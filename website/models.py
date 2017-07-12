@@ -97,7 +97,7 @@ class Result(models.Model):
     grade = models.CharField(max_length=1, choices=CHOICES)
 
     def __str__(self):
-        return self.stu_name.name + ',' + self.sub_name.name
+        return self.student_name.name + ',' + self.subject_name.name
 
 class Alumini(models.Model):
     name = models.CharField(max_length=100)
