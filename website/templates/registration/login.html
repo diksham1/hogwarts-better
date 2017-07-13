@@ -1,0 +1,12 @@
+{% extends 'website/base.html' %}
+
+{% block title %}Log In{% endblock %}
+
+{% block content %}
+    <form class="form-horizontal" action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="submit" class="btn-success btn">
+        <a href="{% url 'password_reset' %}">Lost Password?</a>
+    </form>
+{% endblock %}
