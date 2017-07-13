@@ -18,6 +18,7 @@ urlpatterns = [
     url(r'^displayresult', views.DisplayResult, name="display"),
     url(r'^register/', views.Register, name="register"),
     url(r'^alumini/$', views.AluminiListView.as_view(), name="alumini-list-view"),
+    url(r'^acheivements/$', views.AcheivementsListView.as_view(), name="acheivements-list-view"),
     url(r'alumini/create/$', views.AluminiCreateView.as_view(), name="alumini-create-view"),
     url(r'^houses/(?P<pk>\d)/', views.HouseDetailView.as_view(), name="house-detail-view"),
     url(r'^media/$', views.PhotoListView.as_view(), name="photo-list-view")]
