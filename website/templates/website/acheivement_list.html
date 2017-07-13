@@ -1,0 +1,18 @@
+{% extends 'website/base.html' %}
+
+{% block title %}Acheivements{% endblock %}
+
+{% block content %}
+    <h1 id="heading">Acheivements</h1>
+    <br>
+    <ul>
+        {% for acheivement in acheivement_list %}
+            <img src="{{ acheivement.student_name.picture.url }}" class="img-responsive" id="castle" style="margin: 4%; float:right">
+            <li>Name:   {{ acheivement.student_name.name }}</li>
+            <p>Year:    {{ acheivement.year }}</p>
+            <p>Acheivement:     {{ acheivement.title }}</p>
+            <p>Details: {{ acheivement.description }}</p>
+            <hr>
+        {% endfor %}
+    </ul>
+{% endblock %}
