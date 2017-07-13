@@ -135,7 +135,7 @@ class Acheivement(models.Model):
     description = models.TextField()
 
     def __str__(self):
-        return self.title + ' by ' + self.stu_name.name
+        return self.title + ' by ' + self.student_name.name
 
 
 class News(models.Model):
