@@ -68,16 +68,13 @@
                             <li><a href="{% url 'website:display' %}">Results</a></li>
                         </ul>
                         <ul class="navbar-nav nav navbar-right">
-                            <li><a href="#"><span class="glyphicon glyphicon-plus"></span> Register</a></li>
+                            <li><a href="{% url 'website:register' %}"><span class="glyphicon glyphicon-plus"></span> Register</a></li>
                             <li>
-                                <a href="#">
-                                    <span class="glyphicon glyphicon-user"></span> 
-                                    {% if user.is_authenticated %}
-                                        Log Out
-                                    {% else %}
-                                        Log In
-                                    {% endif %}
-                                </a>
+                                {% if user.is_authenticated %}
+                                    <a href="{% url 'logout' %}"><span class="glyphicon glyphicon-user"></span> Log Out</a>
+                                {% else %}
+                                    <a href="{% url 'login' %}"><span class="glyphicon glyphicon-user"></span> Log In</a>
+                                {% endif %}
                             </li>
                        </ul>
                     </div>

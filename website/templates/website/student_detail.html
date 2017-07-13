@@ -16,7 +16,14 @@
         <p><strong>Year: </strong>{{ student.year }}</p>
         <p><strong>Interests: </strong>{{ student.interests }}</p>
         <p><strong>House: </strong>{{ student.house.name }}</p>
-        <p><strong>Subjects Opted: </strong>{{ student.subject_set.all }}</p>
+        <p><strong>Subjects Opted: </strong>
+            {% for subject in student.subjects.all %}
+                {{ subject }}
+                {% if student.subjects.all.count > 1 %}
+                    ,
+                {% endif %}
+            {% endfor %}
+        </p>
         <p><strong>About {{ student.name }}: </strong>{{ student.description }}</p>
     </div>
 {% endblock %}

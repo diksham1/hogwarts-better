@@ -4,8 +4,11 @@ from django.views.generic import ListView, DetailView
 from django.shortcuts import render, get_object_or_404
 from .models import Faculty, Student, House, Photo, Result
 from .forms import SearchForm
+from .forms import RegistrationForm
+from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
+import datetime
 
 
 def index(request):
@@ -68,3 +71,32 @@ def DisplayResult(request):
             
                 return HttpResponseRedirect(reverse('website:result', args=[str(stu.id)]))
     return render(request, 'website/displayresult.html', {'form': form})
+
+def Register(request):
+    if request.method == 'GET':
+        form = RegistrationForm()
+    else:
+        if request.method == 'POST':
+            form = RegistrationForm(request.POST, request.FILES)
+            if form.is_valid():
+                username = form.cleaned_data['username']
+                password = form.cleaned_data['password']
+                date_joined = datetime.datetime.now()
+                new_user = User(username=username, password=password, date_joined=date_joined)
+                new_user.save()
+                name = form.cleaned_data['name']
+                dob = form.cleaned_data['dob']
+                year = form.cleaned_data['year']
+                interests = form.cleaned_data['interests']
+                description = form.cleaned_data['description']
+                picture = request.FILES['picture']
+                house = form.cleaned_data['house']
+                subjects = form.cleaned_data['subjects']
+                
+                new_stu = Student(name=name, dob=dob, interests=interests,description=description, house=house, picture=picture)
+                new_stu.save();
+                for subject in subjects:
+                    new_stu.subjects.add(subject)
+                
+                return HttpResponseRedirect(reverse('website:student-list-view'))
+    return render(request, 'website/registration.html', {'form': form})
