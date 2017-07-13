@@ -1,0 +1,15 @@
+{% extends 'website/base.html' %}
+
+{% block title %}Rules and Regulations{% endblock %}
+
+{% block content %}
+    <h1 id="heading">Rules</h1>
+    <br>
+    <ul>
+        {% for rule in rule_list %}
+            <li><strong>w.e.f {{ rule.wef }}, {{ rule.title }}</li></strong>
+            <p>Details: {{ rule.description }}</p>
+            <hr>
+        {% endfor %}
+    </ul>
+{% endblock %}

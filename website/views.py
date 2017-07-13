@@ -5,7 +5,7 @@ from django.shortcuts import render, get_object_or_404
 from .models import Faculty, Student, House, Photo, Result, Infrastructure
 from .forms import SearchForm
 from .forms import RegistrationForm
-from .models import Alumini, Acheivement
+from .models import Alumini, Acheivement, Rule
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
@@ -21,6 +21,10 @@ def about(request):
 class FacultyListView(ListView):
     model = Faculty
     template_name = 'website/faculty.html'
+
+class RuleListView(ListView):
+    model = Rule
+    template_name = 'website/rules.html'
 
 class AcheivementsListView(ListView):
     model = Acheivement
