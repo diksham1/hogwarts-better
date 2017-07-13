@@ -1,0 +1,35 @@
+{% extends 'website/base.html' %}
+
+{% block title %}
+    Our Alumini
+{% endblock %}
+
+{% block content %}
+    <h1 id="heading">Our Alumini</h1>
+    <h6>If you are an alumini and unregistered, please register 
+        <a href="{% url 'website:alumini-create-view' %}">here</a></h4>
+    <br>
+    <br>
+    <table class="table table-bordered table hover">
+        <thead>
+            <tr>
+                <th>Alumini Name</th>
+                <th>Passing Year</th>
+                <th>Current Job</th>
+                <th>Date of occupying present Job</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for alumini in alumini_list %}
+                <tr>
+                    <td>{{ alumini.name }}</td>
+                    <td>{{ alumini.year }}</td>
+                    <td>{{ alumini.current_position }}</td>
+                    <td>{{ alumini.joining_date }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <p style="color:magenta"><em>They have made us proud. It's YOUR turn now ;)</em></p>
+{% endblock %}

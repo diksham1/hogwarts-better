@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
 from django.shortcuts import render, get_object_or_404
-from .models import Faculty, Student, House, Photo, Result
+from .models import Faculty, Student, House, Photo, Result, Infrastructure
 from .forms import SearchForm
 from .forms import RegistrationForm
+from .models import Alumini
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
@@ -21,6 +22,18 @@ class FacultyListView(ListView):
     model = Faculty
     template_name = 'website/faculty.html'
 
+class AluminiCreateView(CreateView):
+    model = Alumini
+    fields = '__all__'
+    template_name = 'website/registration.html'
+
+    def get_success_url(self):
+        return reverse('website:alumini-list-view')
+
+class AluminiListView(ListView):
+    model = Alumini
+    template_name = 'website/alumini.html'
+
 class FacultyDetailView(DetailView):
     model = Faculty
     fields = '__all__'
@@ -32,6 +45,10 @@ class StudentListView(ListView):
 class StudentDetailView(DetailView):
     model = Student
     fields = '__all__'
+
+class InfrastructureListView(ListView):
+    model = Infrastructure
+    template_name = 'website/infra.html'
 
 class HouseDetailView(DetailView):
     model = House

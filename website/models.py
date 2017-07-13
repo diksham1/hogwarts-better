@@ -103,7 +103,7 @@ class Alumini(models.Model):
     name = models.CharField(max_length=100)
     year = models.IntegerField(choices=YEAR_CHOICES)
     current_position = models.CharField(max_length=500, help_text="What the Alumini is currently doing e.g Student, Software Engineer etc")
-    joining_date = models.DateField(help_text='Date of joining this position')
+    joining_date = models.DateField(help_text='Date of joining this position (in yyyy-mm-dd format)')
 
     def __str__(self):
         return self.name
