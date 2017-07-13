@@ -51,8 +51,8 @@ ul {
     background: white;
     box-shadow: 4px 4px #ddd;
     border: 2px solid #edd;
-	margin-top: 1%;
-	margin-bottom: 3%;
+    margin-top: 1%;
+    margin-bottom: 3%;
 }
 
 .middle{
@@ -64,14 +64,14 @@ ul {
 
 .side li a{
     font-size: 1.2vw;
-	text-align: justify;
+    text-align: justify;
 }
 
 #heading{
     font-size: 2.5vw;
     text-align: center;
     font-family: 'rye', cursive;
-	margin-bottom: 5%;
+    margin-bottom: 5%;
 }
 
 .link-heading{
@@ -86,28 +86,28 @@ body{
 }
 
 #castle{
-	height: 15vw;
-	width: 17vw;	
+    height: 15vw;
+    width: 17vw;	
 }
 
 #me{
-	height: 30vw;
-	width: 30vw;
+    height: 30vw;
+    width: 30vw;
 }
 
 .house{
-	margin-top: 3%;
-	border-radius:8px;
-	border: 2px solid black;
-	padding: 2vw;
+    margin-top: 3%;
+    border-radius:8px;
+    border: 2px solid black;
+    padding: 2vw;
 }
 
 .btn-reponsive{
-	display: block;
-	background-color: lightblue;
-	color: black;
-	width: 10.5vw;
-	height: 4vw;
+    display: block;
+    background-color: lightblue;
+    color: black;
+    width: 10.5vw;
+    height: 4vw;
 }
 
 
