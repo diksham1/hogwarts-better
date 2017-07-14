@@ -8,7 +8,11 @@
         <h3>{{ faculty.name }}</h3>
     </div>
     <div class="col-xs-4 col-sm-4 col-md-12 col-lg-12" style="margin-bottom: 3%">
-        <img src="{{ faculty.picture.url }}" id="me" class="img-responsive">
+        {% if faculty.picture %}
+            <img src="{{ faculty.picture.url }}" id="me" class="img-responsive">
+        {% else %}
+            <img src="http://www.priorlakeassociation.org/wp-content/uploads/2011/06/blank-profile.png" id="me" class="img-responsive">
+        {% endif %}
     </div>
     <div style="margin-top: 3%;" class="col-xs-8 col-lg-12 col-sm-8 col-md-12">
         <p><strong>Name: </strong>{{ faculty.name }}</p>
