@@ -108,6 +108,7 @@ def Register(request):
                 password = form.cleaned_data['password']
                 date_joined = datetime.datetime.now()
                 new_user = User(username=username, password=password, date_joined=date_joined)
+                new_user.set_password(password)
                 new_user.save()
                 name = form.cleaned_data['name']
                 dob = form.cleaned_data['dob']
